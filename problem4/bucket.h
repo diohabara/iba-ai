@@ -66,3 +66,9 @@ int BucketList::dfs_solve() {
 int BucketList::a_star_solve() {
   // implement
 }
+
+bool is_integer(std::string str) {
+  for (size_t i = 0; i < str.size(); i++)
+    if (isdigit(str[i]) == false) return false;
+  return true;
+}

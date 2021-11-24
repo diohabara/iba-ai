@@ -2,12 +2,6 @@
 
 #include "bucket.h"
 
-bool is_integer(std::string str) {
-  for (size_t i = 0; i < str.size(); i++)
-    if (isdigit(str[i]) == false) return false;
-  return true;
-}
-
 int main(int argc, char** argv) {
   if (argc != 2) {
     std::cerr << "Usage: " << argv[0] << "the number of buckets" << std::endl;
