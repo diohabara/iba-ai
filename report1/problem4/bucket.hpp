@@ -50,6 +50,8 @@ class BucketList {
   void BucketList::set_right_ball(int bucket_index, int right_ball) {
     this->bucket_list[bucket_index].set_right_ball(right_ball);
   }
+  void swap(int bucket_index1, int bucket_index2);
+  bool is_valid();
   int bfs_solve();
   int dfs_solve();
   int a_star_solve();
