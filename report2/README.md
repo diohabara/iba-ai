@@ -1,8 +1,8 @@
 # レポート課題
 
-締め切りは以下の通り。
-
 第一回レポート（第 1 問～第 5 問）：12 月 20 日の２３：５９まで。
+
+第二回レポート（第 6 問～第 10 問）：1 月 31 日の２３：５９まで。
 
 ---
 
@@ -89,7 +89,7 @@
 
       実応用例については、 特許・新聞記事・論文などの出典とともに、どのように応用されているかをわかりやすく平易な言葉で説明すること。
 
-3. 第３問：課題番号 03★★） 二人で対戦する約数ゲームを考えよう。 このゲームのルールは次のようである。
+3. （第３問：課題番号 03★★） 二人で対戦する約数ゲームを考えよう。 このゲームのルールは次のようである。
 
    - 正の整数 n が固定される
    - ２人のプレイヤは交互に n の約数を言う
@@ -156,15 +156,134 @@
       - これについては、『必要な警備員は高々*floor(n/3)*人である』という美術館定理が知られている。ただし *floor()*は小数点以下を切り捨てる関数である。
       - ではできるだけ少ない警備員で監視する場所を求めてみよう。以下のような部屋の例や他のいろいろな形状を実験してみよ。
 
-        ![museum](http://www.iba.t.u-tokyo.ac.jp/iba/AI/museum.jpg)
+      ![museum](http://www.iba.t.u-tokyo.ac.jp/iba/AI/museum.jpg)
 
-      - 美術館定理と GA の適用については [ここに](http://www.iba.t.u-tokyo.ac.jp/iba/AI/museum_print2.pdf)ある。ここでのヒント以外にも各自工夫してほしい
+      - 美術館定理と GA の適用については [ここに](http://www.iba.t.u-tokyo.ac.jp/iba/AI/museum_print2.pdf)ある。ここでのヒント以外にも各自工夫してほしい。
 
    必ずしも最良の成績が得られなくても成績評価には関係しない。 どれだけ工夫したか、考察したかで評価する。
 
    パラメータ（GA,GP では集団数、世 代数、交叉率、突然変異率など）や問題の難しさ（サイズ、質の違い）が探索 の効率にどのように影響するのかを観察すること。
 
    もちろん良い成績であればベストであるが。。。
+
+6. （第６問：課題番号 06★） メタヒューリスティクスには、新しい手法が 数多く提案されている。たとえば以下のようなものがある。
+
+   - Honey-Bee Mating Optimization (HBMO)
+   - Invasive Weed Optimization (IWO)
+   - Teaching-Learning-Based Optimization (TLBO)
+   - Plant Propagation Algorithm (PPA)
+   - Water Cycle Algorithm (WCA)
+   - Symbiotic Organisms Search (SOS) algorithm
+   - Harris hawks optimization (HHO)
+   - Black Hole Algorithm (BHA)
+   - Fruit fly optimization algorithm (FOA)
+   - Ant lion optimizer (ALO)
+   - Moth-flame optimization algorithm (MFO)
+   - Elephant herding optimization (EHO)
+   - Coral reef optimization
+   - Monarch butterfly optimization
+   - Egyptian Vulture Optimization
+   - ゴキブリ探索：Cockroach Swarm Optimization
+   - バクテリア探索：Bacterial Foraging Optimization
+   - リス探索：Squirrel search algorithm
+   - 重力探索：Gravitational search algorithm (GSA)
+   - ひらめき探索：Brain Storm Optimization (BSO)
+   - 集団心理療法探索：Group Counseling Optimization (GCO)
+
+   これらの手法かもしくは新しいメタヒューリスティックスのうち２つ以上を選んで、そのアルゴリズム、実験例、実用例などについて分かりすく説明せよ。
+
+   なお、講義で詳しく説明したか、著名なもののうち以下のものは選んではならない。
+
+   - ABC,ACO,PSO,GA,SA,NN
+   - カッコウ探索、ハーモニー探索、ホタル探索、ネコ探索、カエル探索
+   - 灰色オオカミ探索、コウモリ探索、花火アルゴリズム、クジラ探索
+
+   ![metaH](http://www.iba.t.u-tokyo.ac.jp/iba/AI/metaH.JPG)
+
+7. （第７問：課題番号 07★★）ある種のアリは巣を引っ越すことが知られている。そのときにある巣の候補地を新しい巣として採用するかを斥候アリが探索して決定する。 つまり斥候アリの決定したがって、ある標準サイズ以上の巣に引っ越すか、狭すぎる巣候補は拒否するかが決まる。この斥候アリの決定が [ビュフォンの針に基づくという研究](http://www.iba.t.u-tokyo.ac.jp/iba/AI/Ants-estimate-area-using-Buffons-needle.pdf) がある。
+
+   これは以下の法則に基づく。
+
+   - ある領域 X 上に２つの直線集合 A,B があり、それぞれの合計長を L,S とする。
+   - A と B での交わりの回数を N とする。
+   - このときに、A,B がランダムに分布するならば X の面積の近似値は 2SL/πN となる。
+
+   ここでは、アリが探索する方法がどのくらい正確かを実験により検証してみよう。 適当な領域上をランダムにアリを探索させて、 面積の近似値を求めてみよ。以下のような例を扱うこと。
+
+   1. 単純な円
+   2. Figure 1 の５つ
+   3. 凸ではないやや複雑で面白い形状
+
+   Figure 1 に関しては、 実験で得られた近似値と、実際にアリが採用した巣の実測値を比較して考察するとよい。
+
+   ![Buffon](http://www.iba.t.u-tokyo.ac.jp/iba/AI/Buffon.JPG)
+
+   Hint1: ビュフォンの針とサンプロコードの解説は [ここに](http://www.iba.t.u-tokyo.ac.jp/iba/AI/Buffon.pdf)ある。
+
+   Hint2: ビュフォンの針に基づくアリの探索実験の詳細は [ここに](http://www.iba.t.u-tokyo.ac.jp/iba/AI/BuffonAnt.pdf)ある。
+
+8. （第８回講義：★★） RBN（ランダム・ブーリアン・ネットワーク）に関する実験を行え。 以下のようなパラメータをさまざまに設定してみること。
+
+   - ノード数（４～７程度）
+   - ノードの次数（２、３、４）
+   - コンスタント関数の有無
+   - ネットワークのトポロジー（つながりかた）
+
+   これにより、アトラクタ（周期的振る舞い）がどのように生成するかを観察せよ。 特に次のような点について実験結果から考察するとよい。
+
+   - どのようなリミットサイクルの長さが観測されるか？
+   - 点アトラクタ（１つだけの吸収状態）の観測可能性
+   - ランダム関数を（一定の条件で）確率的に変動させるとどうなるか？
+
+   Hint1: 講義で説明した RBN の実験プログラムは [ここ](http://www.iba.t.u-tokyo.ac.jp/iba/AI/RBN.c)にある。
+
+   Hint2: RBN の解説は [教科書](https://shop.ohmsha.co.jp/shopdetail/000000004976/)の 3.1 節にある。
+
+9. （第９問：課題番号 09★★★） 以下のメタヒューリスティクス手法のうち１つ以上(できれば２つ)を選んで、簡単にアルゴリズムを説明したのち、ナップザック問題に適用してその性能を比較してみよ。
+
+   - ホップフィールドネットワーク：Hopfield networks
+   - Egyptian Vulture Optimization
+   - Gravitational search
+   - カエル探索：Shuffled Frog-Leaping Algorithm (SFLA)
+
+   Hint1: ナップザック問題の定義、計算量、ヒューリスティックの解説は [ここに](http://www.iba.t.u-tokyo.ac.jp/iba/AI/knapsack.pdf)ある。また、 解くべき例題については、 [ここに](https://people.sc.fsu.edu/~jburkardt/datasets/knapsack_01/knapsack_01.html)あるベンチマークなどを利用するとよい。 とくに P07,P08 を推奨する。
+
+   Hint2: 以下の論文などが参考になる。
+
+   - [ホップフィールドネットワークのナップザック問題への応用](https://ci.nii.ac.jp/naid/110003207472)
+   - [Egyptian Vulture Optimization のナップザック問題への応用](https://link.springer.com/chapter/10.1007/978-3-642-37371-8_26)
+   - [discrete gravitational search のナップザック問題への応用](https://link.springer.com/article/10.1007/s12351-016-0240-2)
+   - [カエル探索のナップザック問題への応用](https://www.sciencedirect.com/science/article/abs/pii/S1568494614000799)
+
+10. （第 10 問：課題番号 10★★★） メタヒューリスティックスを用いた多目的最適化のシミュレータを作成せよ。 2 次元のパレートフロントをうまくとらえられるかを実験してみよう。
+
+    以下のいずれかの手法を１つ以上(できれば２つ)用いること。
+
+    - ANN (Artificial neural networks)
+    - ACO (Ant colony optimization)
+    - PSO (Partical swarm optimization)
+    - ABC (Artificial bee algorithm)
+    - FA (Firefly algorithm)
+    - CS (cuckoo search)
+
+    講義で説明した多目的最適化の VEGA シミュレータは [ここ](http://www.iba.t.u-tokyo.ac.jp/iba/AI/EvolutionaryAlgorithm.jar)にある（java executable file）。 またシミュレータの使用方法は[ここにある](http://www.iba.t.u-tokyo.ac.jp/iba/AI/MOsimulator.pdf)。 java ソースファイルはは[ここにある](http://www.iba.t.u-tokyo.ac.jp/iba/AI/MO_src.zip)。
+
+    以下に述べられている例題か自分で考えた面白い例題を試すこと。 パレートフロントが異なる問題（凸型フロント、凹型フロントなど）の実験を行って 結果を観察するとよい。
+
+    - [多目的最適化例題集](http://mikilab.doshisha.ac.jp/dia/research/mop_ga/moga/4/4-1-1.html)
+    - [多目的最適化の分かりやすい説明と例題のある論文](http://mikilab.doshisha.ac.jp/dia/research/mop_ga/paper/okada/graduate.pdf)
+
+    Hint: VEGA のアルゴリズムとシミュレータの解説は [この本](https://shop.ohmsha.co.jp/shopdetail/000000004976/)の 5.6 節にある。
+
+    Hint: 以下の論文などが参考になる。
+
+    - [多目的 ANN(1)](https://www.researchgate.net/publication/221912442_Multi-Objective_Optimization_Methods_Based_on_Artificial_Neural_Networks)
+    - [多目的 ANN(2)](http://www.iba.t.u-tokyo.ac.jp/iba/AI/sudaMO.pdf)
+    - [多目的 ACO](https://hal.archives-ouvertes.fr/hal-01502167/document)
+    - [多目的 PSO](https://www.jstage.jst.go.jp/article/kikaic/78/785/78_785_201/_pdf/-char/ja)
+    - [多目的 ABC](https://www.hindawi.com/journals/ddns/2011/569784/)
+    - [多目的 FA](https://arxiv.org/abs/1303.6336)
+    - [多目的 CS](https://www.sciencedirect.com/science/article/abs/pii/S0305054811002905)
 
 ---
 
