@@ -1,22 +1,9 @@
-# 課題番号 04
+# 人工知能レポート 課題 4
 
-## `BFS` 実行方法
-
-```bash
-make bfs
-./bfs <integer>
-```
-
-## `DFS` 実行方法
+## setup
 
 ```bash
-make dfs
-./dfs <integer>
-```
-
-## `A*` 実行方法
-
-```bash
-make astar
-./astar <integer>
+pyenv install
+pyenv local anaconda3-2021.05
+poetry run jupyter lab
 ```
